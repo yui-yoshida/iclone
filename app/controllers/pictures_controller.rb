@@ -15,11 +15,13 @@ class PicturesController < ApplicationController
 
   def confirm
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
     render :new if @picture.invalid?
   end
 
   def create
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
     if @picture.save
       redirect_to pictures_path, notice: "Photoを作成しました"
     else
@@ -49,6 +51,7 @@ class PicturesController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   private
