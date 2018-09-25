@@ -19,12 +19,12 @@ class UsersController < ApplicationController
 
   def fav_pictures
     @user = User.find(params[:id])
-    @favorites_pictures = @user.favorites
+    @favorites_pictures = @user.favorite_pictures
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
   end
 end

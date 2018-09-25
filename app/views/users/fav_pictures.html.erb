@@ -1,7 +1,8 @@
 <p>お気に入り一覧</p>
 
-<%= @favorites_pictures.each do |favorite_picture| %>
-  <li><%= favorite_picture %></li>
+<% @favorites_pictures.each do |favorite_picture| %>
+  <li><%= favorite_picture.content %></li>
+  <li><%= image_tag favorite_picture.image %></li>
 <% end %>
 
 <br>
