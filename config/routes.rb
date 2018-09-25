@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+  get '/favorites/:id', to: 'users#fav_pictures'
   resources :users
   resources :favorites, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]

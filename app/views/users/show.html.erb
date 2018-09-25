@@ -2,7 +2,4 @@
 
 <p>メールアドレス: <%= @user.email %></p>
 
-<p>お気に入り一覧</p>
-<% @favorites_pictures.each do |favorite_picture| %>
-  <li><%= favorite_picture %></li>
-<% end %>
+<%= link_to "お気に入り一覧", favorite_path %>

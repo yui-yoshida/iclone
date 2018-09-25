@@ -1,0 +1,8 @@
+<p>お気に入り一覧</p>
+
+<%= @favorites_pictures.each do |favorite_picture| %>
+  <li><%= favorite_picture %></li>
+<% end %>
+
+<br>
+<%= link_to "戻る", user_path %>
