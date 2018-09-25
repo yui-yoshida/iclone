@@ -17,6 +17,23 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if current_user == @user
+      if @user.update(user_params)
+        flash[:notice] = "ユーザー情報を編集しました"
+        render "show"
+      else
+        flash[:notice] = "ユーザー情報の編集に失敗しました"
+        render "edit"
+      end
+    end
+  end
+
   def fav_pictures
     @user = User.find(params[:id])
     @favorites_pictures = @user.favorite_pictures
