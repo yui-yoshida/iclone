@@ -1,4 +1,9 @@
-<h3>以下の内容で送信する</h3>
+<br>
+<br>
+<br>
+<br>
+<div class = "center">
+<h3 >以下の内容で送信する</h3>
 
 <%= form_with(model: @picture, local: true) do |form| %>
   <%= form.hidden_field :content %>
@@ -14,3 +19,4 @@
   <%= form.hidden_field :image_cache %>
   <%= form.submit "もどる" , name: "back" %>
 <% end %>
+</div>

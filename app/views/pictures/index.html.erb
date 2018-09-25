@@ -1,24 +1,26 @@
+<br>
+<br>
+<br>
+<br>
+<div class = "center">
 <h1>Photo一覧</h1>
 
 <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>内容</th>
-    <th>写真</th>
-  </tr>
 <% @pictures.each do |picture| %>
-  <tr>
-    <td><%= picture.content %></td>
-    <td><%= image_tag picture.image %></td>
-
-    <td><%= link_to "詳細", picture_path(picture.id) %></td>
+  <ul>
+    <li><%= image_tag picture.image %></li>
+    <li class = "content"><%= picture.content %></li>
+   <div class="container">
+    <li class="item"><%= link_to "詳細", picture_path(picture.id),:class => "btn btn-info" %></li>
     <% if picture.user.id == current_user.id %>
-      <td><%= link_to "編集", edit_picture_path(picture.id) %></td>
-      <td><%= link_to '削除', picture_path(picture.id), method: :delete , data: { confirm: "本当に削除していいですか？" }%></td>
+      <li class="item"><%= link_to "編集", edit_picture_path(picture.id),:class => "btn btn-warning" %></li>
+      <li class="item"><%= link_to '削除', picture_path(picture.id),:class => "btn btn-danger" ,method: :delete , data: { confirm: "本当に削除していいですか？" }%></li>
     <% end %>
-  </tr>
+  </div>
+  </ul>
 <% end %>
-</table>
 
-<%= link_to '新しくPhotoを投稿する', new_picture_path %>
+<%= link_to '新しくPhotoを投稿する', new_picture_path ,:class => "btn btn-primary"%>
+
+</div>

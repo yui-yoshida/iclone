@@ -1,3 +1,8 @@
+<br>
+<br>
+<br>
+<br>
+<div class = "center">
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
@@ -8,6 +13,7 @@
   <%= image_tag 'noimage.gif' %>
 <% end %>
 <br>
-<%= link_to "Picture一覧", pictures_path %>
-<%= link_to "お気に入り一覧", favorite_path %>
-<%= link_to "user情報の編集", edit_user_path %>
+<%= link_to "Picture一覧", pictures_path ,:class => "btn btn-info"%>
+<%= link_to "お気に入り一覧", favorite_path ,:class => "btn btn-primary"%>
+<%= link_to "user情報の編集", edit_user_path ,:class => "btn btn-warning"%>
+</div>

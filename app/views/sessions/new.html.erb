@@ -1,11 +1,22 @@
+<br>
+<br>
+<br>
+<br>
+<div class = "center">
+
 <h1>Log in</h1>
+<%= notice %>
+
+<ul>
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+  <li><%= f.label :email %></li>
+  <li><%= f.email_field :email %></li>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <li><%= f.label :password %></li>
+  <li><%= f.password_field :password %></li>
 
-  <%= f.submit "Log in" %>
+  <li><%= f.submit "Log in", :class => "btn btn-success"%></li>
+</ul>
 <% end %>
+</div>

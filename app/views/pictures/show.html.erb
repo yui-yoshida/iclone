@@ -1,3 +1,8 @@
+<br>
+<br>
+<br>
+<br>
+<div class = "center">
 <h1>Photo詳細画面</h1>
 <p>タイトル: <%= @picture.content %></p>
 <p>画像: <%= image_tag @picture.image %></p>
@@ -8,6 +13,7 @@
   <% else %>
    <%= link_to "お気に入りする", favorites_path(picture_id: @picture.id ), method: :post, class: "btn btn-primary" %>
   <% end %>
-<% end %> 
+<% end %>
 
 <%= link_to 'Photo一覧画面にもどる', pictures_path %>
+</div>

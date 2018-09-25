@@ -8,22 +8,24 @@
     </ul>
   </div>
 <% end %>
-
+<ul>
 <%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <li><%= f.label :name %></li>
+  <li><%= f.text_field :name %></li>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+  <li><%= f.label :email %></li>
+  <li><%= f.email_field :email %></li>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <li><%= f.label :password %></li>
+  <li><%= f.password_field :password %></li>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.label :image %>
-  <%= f.file_field :image, id: :users_image %>
-
-  <%= f.submit "Create my account" %>
+  <li><%= f.label :password_confirmation %></li>
+  <li><%= f.password_field :password_confirmation %></li>
+<div class = file>
+  <li><%= f.label :image %></li>
+  <li><%= f.file_field :image, id: :users_image %></li>
+</div>
+<br>
+  <li><%= f.submit "Create my account", :class => "btn btn-success"%></li>
 <% end %>
+</ul>
