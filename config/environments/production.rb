@@ -2,6 +2,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'polar-lowlands-88875.herokuapp.com' }
   config.action_mailer.delivery_method = :letter_opener_web
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
