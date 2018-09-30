@@ -3,10 +3,10 @@
 <br>
 <br>
 <div class = "center">
-<p>お気に入り一覧</p>
+<h1 class = "under_dots">お気に入り一覧</h1>
 
 <% @favorites_pictures.each do |favorite_picture| %>
-  <li><%= favorite_picture.content %></li>
+  <li class = "content"><%= favorite_picture.content %></li>
   <li><%= image_tag favorite_picture.image %></li>
 <% end %>
 

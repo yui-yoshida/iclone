@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :user_check, only: [:edit]
+
   def new
     @user = User.new
   end
@@ -43,5 +45,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
+  end
+
+  def user_check
+    @user = User.find(params[:id])
+    unless current_user == @user
+      redirect_to pictures_path, notice:"本人以外は編集できません"
+    end
   end
 end

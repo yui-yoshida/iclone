@@ -17,6 +17,7 @@
   </div>
   <div class="picture_image">
     <%= image_tag(@picture.image.url) if @picture.image.url %>
+    <br>
     <div class = file>
     <%= form.label :image %>
     <%= form.file_field :image, id: :picture_image %>

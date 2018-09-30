@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
   before_action :loggin_check, only: [:new, :edit, :show, :destroy, :index]
+  before_action :user_check, only: [:edit]
 
   def index
   end
@@ -68,6 +69,13 @@ class PicturesController < ApplicationController
   def loggin_check
     if session[:user_id] == nil
       redirect_to new_session_path, notice:"ログインしてください"
+    end
+  end
+
+  def user_check
+    @picture = Picture.find(params[:id])
+    unless current_user.id == @picture.user_id
+      redirect_to pictures_path, notice:"投稿者以外は編集できません"
     end
   end
 

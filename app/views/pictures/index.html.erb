@@ -3,14 +3,15 @@
 <br>
 <br>
 <div class = "center">
-<h1>Photo一覧</h1>
+<h1 class = "under_dots">Photo一覧</h1>
 
 <p><%= notice %></p>
 
 <% @pictures.each do |picture| %>
   <ul>
     <li><%= image_tag picture.image %></li>
-    <li class = "content"><%= picture.content %></li>
+    <li class = "content">content:<%= picture.content %></li>
+    <li class = "content">name:<%= picture.user.name %></li>
    <div class="container">
     <li class="item"><%= link_to "詳細", picture_path(picture.id),:class => "btn btn-info" %></li>
     <% if picture.user.id == current_user.id %>
