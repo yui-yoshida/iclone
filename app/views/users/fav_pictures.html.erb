@@ -3,13 +3,13 @@
 <br>
 <br>
 <div class = "center">
-<h1 class = "under_dots">お気に入り一覧</h1>
+<h1 class = "under_dots">FavoritePhotos</h1>
 
 <% @favorites_pictures.each do |favorite_picture| %>
-  <li class = "content"><%= favorite_picture.content %></li>
   <li><%= image_tag favorite_picture.image %></li>
+  <li class = "content">content:<%= favorite_picture.content %></li>
+  <li class = "content">name:<%= favorite_picture.user.name %></li>
 <% end %>
-
 <br>
 <%= link_to "戻る", user_path ,:class => "btn btn-primary"%>
 </div>
